@@ -28,7 +28,7 @@ currencies = [
     "ZWL"
     ]
 
-amount = st.number_input("Enter Amount: ", min_value = 0.01, format = "%.2f")
+amount = st.number_input("Enter Amount: ", min_value = 0.01, step = 1.00, format = "%.2f")
 from_currency = st.selectbox("From Currency", options = currencies)
 to_currency = st.selectbox("To Currency", options = currencies)
 if st.button("Convert", type = "primary"):
@@ -41,7 +41,7 @@ if st.button("Convert", type = "primary"):
             if response.status_code == 200:
                 rate = data["conversion_rates"].get(to_currency)
                 converted_amount = amount * rate
-                st.success(f"{amount} {from_currency} = {converted_amount:.2f} {to_currency}")
+                st.success(f"{amount} {from_currency} = {converted_amount:.4f} {to_currency}")
             else:
                 st.error("Error fetching exchange rates. Try again later.")
         except Exception as e:
