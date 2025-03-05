@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 
+st.set_page_config(page_icon = "💱")
+
 API_KEY = "aa13b3f5df0d081c7c94b8da"
 BASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/"
 
