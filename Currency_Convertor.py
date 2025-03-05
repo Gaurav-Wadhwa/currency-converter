@@ -28,7 +28,7 @@ currencies = [
     "ZWL"
     ]
 
-amount = st.number_input("Enter Amount: ", min_value = 0.01, step = 1.00, format = "%.2f")
+amount = st.number_input("Enter Amount: ", min_value = 0.01, value = 1.00, step = 1.00, format = "%.2f")
 from_currency = st.selectbox("From Currency", options = currencies)
 to_currency = st.selectbox("To Currency", options = currencies)
 if st.button("Convert", type = "primary"):
